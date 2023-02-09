@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="min-h-screen py-40 w-full bg-gradient-to-br from-purple-400 to-blue-400">
+        <div class="container mx-auto">
+            <div class="flex w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
+                <div class="w-1/2 flex flex-col bg-cover bg-no-repeat bg-left-top" style="background-image: url('../../src/img/bg.jpg');">
+                </div>
+                <div class="w-1/2 py-16 px-12">
+                    <h2 class="text-3xl mb-4">Register</h2>
+                    <p class="mb-4">
+                        Create your account. it's free and only take a minute
+                    </p>
+                    <form action="#">
+                        <div class="grid grid-cols-2 gap-5">
+                            <input type="text" name="firstname" placeholder="Firstname" class="border border-gray-400 py-1 px-2" required>
+                            <input type="text" name="lastname" placeholder="Lastname" class="border border-gray-400 py-1 px-2" required>
+                        </div>
+                        <div class="mt-5">
+                            <input type="tel" name="phone" pattern="[08][0-9]{9}" placeholder="Phone Number" maxlength="13" class="border border-gray-400 py-1 px-2 w-full" required>
+                        </div>
+                        <div class="mt-5">
+                            <input type="text" name="username" placeholder="Username" class="border border-gray-400 py-1 px-2 w-full">
+                        </div>
+                        <div class="flex mt-5">
+                            <input type="password" name="password" id="password"  placeholder="Password" class="border w-11/12 border-gray-400 py-1 px-2" required>
+                            <ion-icon id="pwd-eye" class="my-2 w-1/12 cursor-pointer" name="eye-outline"></ion-icon>
+                        </div>
+                        <div class="flex mt-5">
+                            <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password" class="border w-11/12 border-gray-400 py-1 px-2" required>
+                            <ion-icon id="cpwd-eye" class="my-2 w-1/12 cursor-pointer" name="eye-outline"></ion-icon>
+                        </div>
+                        <div class="mt-12">
+                            <button class="w-full bg-purple-500 py-3 text-center text-white rounded-full shadow-2xl hover:bg-purple-400 transition duration-300 ease-in-out">Register Now</button>
+                        </div>
+                        <div class="mt-5">
+                            <p class="w-full text-center">Alredy have an account? <a class="text-purple-500 hover:text-purple-300 transition duration-300 ease-in-out" href="./login.html">Login</a> Here</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="../js/reveal.js"></script>
+</body>
+</html>
