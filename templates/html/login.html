@@ -8,29 +8,30 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="min-h-screen py-40 w-full bg-gradient-to-br from-purple-400 to-blue-400">
+    <div class="min-h-screen py-32 w-screen bg-gradient-to-br from-purple-400 to-blue-400">
         <div class="container mx-auto">
             <div class="flex w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
-                <div class="w-1/2 flex flex-col bg-cover bg-no-repeat bg-left-top" style="background-image: url('../../src/img/bg.jpg');">
+                <div class="w-1/2 flex flex-col bg-cover bg-no-repeat bg-left-top" style="background-image: url('../../src/img/bg.png');">
                 </div>
-                <div class="w-1/2 py-16 px-12">
+                <div class="w-1/2 py-16 px-16">
                     <h2 class="text-3xl mb-4">Login</h2>
                     <p class="mb-4">
-                        Login to your account
+                        Silahkan untuk login terlebih dahulu
                     </p>
-                    <form action="POST">
+                    <form method="POST">
                         <div class="mt-5">
-                            <input type="text" name="username" placeholder="Username Or Email" class="border border-gray-400 py-1 px-2 w-full">
+                            <input type="text" id="username" name="username" value="" placeholder="Email atau Nomor Peserta" class="border border-gray-400 py-1 px-2 w-full">
                         </div>
                         <div class="flex mt-5">
-                            <input type="password" name="password" id="password"  placeholder="Password" class="border w-11/12 border-gray-400 py-1 px-2" required>
+                            <input type="password" id="password" name="password" id="password" value=""  placeholder="Password" class="border w-11/12 border-gray-400 py-1 px-2" required>
                             <ion-icon id="pwd-eye" class="my-2 w-1/12 cursor-pointer" name="eye-outline"></ion-icon>
                         </div>
                         <div class="mt-12">
-                            <input type="submit" name="btn-submit" id="btn-submit" value="Login"  class="w-full bg-purple-500 py-3 text-center text-white rounded-full shadow-2xl cursor-pointer hover:bg-purple-400 transition duration-300 ease-in-out">
+                            <!-- <input type="submit" name="btn-submit" id="btn-submit" value="Login" class="w-full bg-purple-500 py-3 text-center text-white rounded-full shadow-2xl hover:bg-purple-400 transition duration-300 ease-in-out"> -->
+                            <button type="submit" class="w-full bg-purple-500 py-3 text-center text-white rounded-full shadow-2xl hover:bg-purple-400 transition duration-300 ease-in-out">Login</button>
                         </div>
                         <div class="mt-5">
-                            <p class="w-full text-center">Don't have any account yet? <a class="text-purple-500 hover:text-purple-300 transition duration-300 ease-in-out" href="./register.html">Register</a> Here</p>
+                            <p class="w-full text-center">Lupa Password ? <a class="text-purple-500 hover:text-purple-300 transition duration-300 ease-in-out" href="./register.html">Klik Disini</a> <br> Belum memiliki akun? <a href="./register.html" class="text-purple-500 hover:text-purple-300 transition duration-300 ease-in-out"> Daftar </a> disini</p>
                         </div>
                     </form>
                 </div>
@@ -40,16 +41,72 @@
 
     <!-- script -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="../js/node_modules/sweetalert2/dist/sweetalert2.css">
+    <script src="../js/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="../js/reveal.js"></script>
-    
-    <script type="text/javascript">
-        var myForm = document.querySelector("form");
-        myForm.addEventListener("submit", confirm)
+    <script>
+        var myForm = document.querySelector('form');
+        myForm.addEventListener('submit', auth)
 
-        function confirm(event){
+        function auth(event){
             event.preventDefault();
-            window.location='./UserDashboard.html'
+            
+            var uname = myForm.username.value;
+            var passwd = myForm.password.value;
+            
+            if(uname == 'user' && passwd == 'user'){
+                Swal.fire({
+                    title: "Login Sukses",
+                    text: "",
+                    icon: "success",
+                    timer: 2000,
+                    showCancelButton: false,
+                    showConfirmButton: false
+                }).then(() => {
+                    window.location.href = './UserDashboard.html';  
+                })
+            }
+            else if(uname == 'admin' && passwd == 'admin'){
+                Swal.fire({
+                    title: "Login Sukses",
+                    text: "",
+                    icon: "success",
+                    timer: 2000,
+                    showCancelButton: false,
+                    showConfirmButton: false
+                }).then(() => {
+                    window.location.href = './AdminDashboard.html';  
+                })
+            }
+            else{
+                Swal.fire({
+                    title: "Login Gagal",
+                    text: "Username atau Password salah!",
+                    icon: "error",
+                    timer: 3000,
+                    showCancelButton: false,
+                    showConfirmButton: false
+                })
+            }
         }
+
+        // myForm.addEventListener('submit', (event) => {
+
+        //     event.preventDefault();
+
+        //     var uname = myForm.username.value;
+        //     var passwd = myForm.password.value;
+            
+        //     if(uname == 'user' && passwd == 'user'){
+
+        //     }
+        //     else if(uname == 'admin' && passwd == 'admin'){
+        //         window.location.href = './AdminDashboard.html';
+        //     }
+        //     else{
+        //         alert("Username atau password salah");
+        //     }
+        // })
     </script>
 </body>
 </html>

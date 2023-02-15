@@ -5,7 +5,7 @@ function confirm(event){
   event.preventDefault();
   Swal.fire({
       title: 'Anda Yakin?',
-      text: "Anda tidak akan bisa mengulang proses ini lagi",
+      text: "",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

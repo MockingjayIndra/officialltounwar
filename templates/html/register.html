@@ -8,15 +8,14 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="min-h-screen py-40 w-full bg-gradient-to-br from-purple-400 to-blue-400">
+    <div class="min-h-screen py-32 w-screen bg-gradient-to-br from-purple-400 to-blue-400">
         <div class="container mx-auto">
             <div class="flex w-8/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
-                <div class="w-1/2 flex flex-col bg-cover bg-no-repeat bg-left-top" style="background-image: url('../../src/img/bg.jpg');">
-                </div>
-                <div class="w-1/2 py-16 px-12">
+                <div class="w-1/2 flex flex-col bg-cover bg-no-repeat bg-center" style="background-image: url('../../src/img/bg.png');"></div>
+                <div class="w-1/2 py-16 px-16">
                     <h2 class="text-3xl mb-4">Register</h2>
                     <p class="mb-4">
-                        Create your account. it's free and only take a minute
+                        Ayo buat akun anda. ini hanya memerlukan beberapa langkah!
                     </p>
                     <form action="#">
                         <div class="grid grid-cols-2 gap-5">
@@ -24,7 +23,13 @@
                             <input type="text" name="lastname" placeholder="Lastname" class="border border-gray-400 py-1 px-2" required>
                         </div>
                         <div class="mt-5">
-                            <input type="tel" name="phone" pattern="[08][0-9]{9}" placeholder="Phone Number" maxlength="13" class="border border-gray-400 py-1 px-2 w-full" required>
+                            <input type="tel" name="phone" pattern="[08][0-9]{9}" placeholder="Nomor Telepon" maxlength="13" class="border border-gray-400 py-1 px-2 w-full" required>
+                        </div>
+                        <div class="mt-5">
+                            <input type="text" name="sekolah" placeholder="Asal Sekolah" class="border border-gray-400 py-1 px-2 w-full" required>
+                        </div>
+                        <div class="mt-5">
+                            <input type="email" name="email" placeholder="Alamat Email" class="border border-gray-400 py-1 px-2 w-full" required>
                         </div>
                         <div class="mt-5">
                             <input type="text" name="username" placeholder="Username" class="border border-gray-400 py-1 px-2 w-full">
@@ -51,6 +56,8 @@
 
     <!-- script -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="../js/node_modules/sweetalert2/dist/sweetalert2.css">
+    <script src="../js/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="../js/reveal.js"></script>
 </body>
 </html>
