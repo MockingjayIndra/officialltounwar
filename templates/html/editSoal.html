@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Soal</title>
+    <title>Edit Soal</title>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/datatables.js"></script>
     <script type="text/javascript" src="../js/jqueryui.js"></script>
@@ -154,10 +154,10 @@
                                 <tbody>
                                     <tr>
                                         <td class="px-6 py-3">
-                                            <label for="nsoal">Soal</label>
+                                            <label for="nsoal">No Soal</label>
                                         </td>
                                         <td colspan="3" class="px-6 py-3">
-                                            <input type="number" required class="border border-gray-400  px-2 py-2 rounded-lg w-full" name="nsoal" id="nsoal" value="1"></textarea>
+                                            <input type="number" required class="border border-gray-400  px-2 py-2 rounded-lg w-full" name="nsoal" id="nsoal" placeholder="Nomor Soal"></textarea>
                                         </td>
                                     </tr>
                                     <tr>
@@ -169,7 +169,7 @@
                                                 <option value="virus">Virus</option>
                                                 <option value="bacteria">Bacteria</option>
                                                 <option value="fungi">Fungi</option>
-                                                <option value="protozoa" selected="selected">Protozoa</option>
+                                                <option value="protozoa">Protozoa</option>
                                                 <option value="helminth">Helminth</option>
                                             </select>
                                         </td>
@@ -198,7 +198,7 @@
                                             <label for="soal">Soal</label>
                                         </td>
                                         <td colspan="3" class="px-6 py-3">
-                                            <textarea required class="border border-gray-400  px-2 py-2 rounded-lg w-full" name="soal" id="soal" cols="30" rows="10">Berikut ini yang bukan merupakan basa nitrogen pada rantai DNA adalah?</textarea>
+                                            <textarea required class="border border-gray-400  px-2 py-2 rounded-lg w-full" name="soal" id="soal" cols="30" rows="10" placeholder="Silahkan Ketik Soal Disini"></textarea>
                                         </td>
                                     </tr>
                                     <tr>
@@ -212,7 +212,8 @@
                                             </select>
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" name="A" value="Timinn">
+                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" id="ainput-text" name="A" placeholder="A">
+                                            <input class="file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full hidden" id="ainput-file" type="file">
                                         </td>
                                         <td class="px-6 py-3">
                                             <input type="radio" name="opsi" id="opsi1" value="A"/>
@@ -230,7 +231,8 @@
                                             </select>
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" name="B" value="Adenin">
+                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" id="binput-text" name="B" placeholder="B">
+                                            <input class="file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full hidden" id="binput-file" type="file">
                                         </td>
                                         <td class="px-6 py-3">
                                             <input type="radio" name="opsi" id="opsi2" value="B"/>
@@ -248,7 +250,8 @@
                                             </select>
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" name="C" value="Guanin">
+                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" id="cinput-text" name="C" placeholder="C">
+                                            <input class="file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full hidden" id="cinput-file" type="file">
                                         </td>
                                         <td class="px-6 py-3">
                                             <input type="radio" name="opsi" id="opsi3" value="C"/>
@@ -266,7 +269,8 @@
                                             </select>
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" name="D" value="Sitosin">
+                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" id="dinput-text" name="D" placeholder="D">
+                                            <input class="file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full hidden" id="dinput-file" type="file">
                                         </td>
                                         <td class="px-6 py-3">
                                             <input type="radio" name="opsi" id="opsi4" value="D"/>
@@ -284,21 +288,17 @@
                                             </select>
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" name="E" value="Urasil">
+                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" id="einput-text" name="E" placeholder="E">
+                                            <input class="file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full hidden" id="einput-file" type="file">
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input type="radio" name="opsi" id="opsi5" value="E" checked="checked"/>
+                                            <input type="radio" name="opsi" id="opsi5" value="E"/>
                                             <label for="opsi5" class="mx-2">Jawaban Benar</label>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="4" class="px-6 py-3">
                                             <input class="cursor-pointer font-bold text-white rounded-xl form-btn w-full px-2 py-3 bg-gradient-to-tr from-purple-500 to-sky-400 hover:opacity-80 transition duration-300 ease-in-out" type="submit" name="btn-submit" id="btn-submit" value="Submit">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4" class="px-6 py-3">
-                                            <a href="./BankSoal.html" class="flex cursor-pointer font-bold text-white rounded-xl form-btn w-full px-2 py-3 bg-gradient-to-tr from-orange-400 to-red-400 hover:opacity-80 transition duration-300 ease-in-out"><p class="mx-auto">Batal</p></a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -318,25 +318,11 @@
     <link rel="stylesheet" href="../js/node_modules/sweetalert2/dist/sweetalert2.css">
     <script src="../js/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="../js/confirm.js"></script>
+    <script src="../js/editsoal.js"></script>
     <script>
         $(document).ready(function () {
             $('#table1').DataTable();
         });
-
-        var text = document.querySelector('#soal-text');
-        var image = document.querySelector('#soal-image');
-        var soal_select = document.querySelector('#soal-select');
-
-        text.classList.toggle('hidden');
-
-        soal_select.addEventListener('change', () => {
-            if(soal_select.value == 'image'){
-                image.classList.toggle('hidden');
-            }
-            else{
-                image.classList.toggle('hidden');
-            }
-        })
     </script>
 
 </body>

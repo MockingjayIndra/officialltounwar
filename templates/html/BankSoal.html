@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="../css/jqueryui.css">
     <link rel="stylesheet" href="../css/datatable.css">
     <link rel="stylesheet" href="../css/style.css">
-
-    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body
@@ -141,7 +139,65 @@
 
                 <div class="relative overflow-x-auto mt-5 bg-gradient-to-r from-purple-500 to-blue-500 w-full rounded-xl shadow-2xl px-10 py-10">
                     <div class=" bg-white px-5 py-5 rounded-2xl my-2">
-                        <form methot="POST">
+                        <table class="w-[100%]">
+                            <thead>
+                                <tr>
+                                    <th class="w-[10%]"></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="px-6 py-3">
+                                        <label for="namaPaket">Input Type</label>
+                                    </td>
+                                    <td colspan="3" class="px-6 py-3">
+                                        <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" name="input-type" id="input-type">
+                                            <option value="bulk">Bulk</option>
+                                            <option value="single">Single</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <form id="bulk-form" methot="POST" class="">
+                            <table class="w-[100%]">
+                                <thead>
+                                    <tr>
+                                        <th class="w-[10%]"></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="px-6 py-3">
+                                            <label for="nsoal">Option</label>
+                                        </td>
+                                        <td colspan="2" class="px-6 py-3">
+                                            <a href="../../src/json/banksoal.json" class="w-full flex rounded-xl bg-teal-500 text-white font-semibold py-3 hover:opacity-80 transition duration-300 ease-in-out cursor-pointer" download=""><p class="mx-auto">Unduh Template</p></a>
+                                        </td>
+                                        <td colspan="2" class="px-6 py-3">
+                                            <div class="flex">
+                                                <p class="px-2 py-1 mx-auto">Silahkan Upload File Json Disini</p>
+                                            </div>
+                                            <input class="block file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full" id="json-upload" type="file">
+                                        </td>
+                                        <tr>
+                                            <td colspan="5" class="px-6 py-3">
+                                                <input class="cursor-pointer font-bold text-white rounded-xl form-btn w-full px-2 py-3 bg-gradient-to-tr from-purple-500 to-sky-400 hover:opacity-80 transition duration-300 ease-in-out" type="submit" name="btn-submit" id="btn-submit" value="Submit">
+                                            </td>
+                                        </tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                        <form id="single-form" methot="POST" class="hidden">
                             <table class="w-[100%]">
                                 <thead>
                                     <tr>
@@ -154,7 +210,7 @@
                                 <tbody>
                                     <tr>
                                         <td class="px-6 py-3">
-                                            <label for="nsoal">Soal</label>
+                                            <label for="nsoal">No Soal</label>
                                         </td>
                                         <td colspan="3" class="px-6 py-3">
                                             <input type="number" required class="border border-gray-400  px-2 py-2 rounded-lg w-full" name="nsoal" id="nsoal" placeholder="Nomor Soal"></textarea>
@@ -171,6 +227,7 @@
                                                 <option value="fungi">Fungi</option>
                                                 <option value="protozoa">Protozoa</option>
                                                 <option value="helminth">Helminth</option>
+                                                <option value="offline">Offline</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -212,7 +269,8 @@
                                             </select>
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" name="A" placeholder="A">
+                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" id="ainput-text" name="A" placeholder="A">
+                                            <input class="file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full hidden" id="ainput-file" type="file">
                                         </td>
                                         <td class="px-6 py-3">
                                             <input type="radio" name="opsi" id="opsi1" value="A"/>
@@ -230,7 +288,8 @@
                                             </select>
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" name="B" placeholder="B">
+                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" id="binput-text" name="B" placeholder="B">
+                                            <input class="file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full hidden" id="binput-file" type="file">
                                         </td>
                                         <td class="px-6 py-3">
                                             <input type="radio" name="opsi" id="opsi2" value="B"/>
@@ -248,7 +307,8 @@
                                             </select>
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" name="C" placeholder="C">
+                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" id="cinput-text" name="C" placeholder="C">
+                                            <input class="file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full hidden" id="cinput-file" type="file">
                                         </td>
                                         <td class="px-6 py-3">
                                             <input type="radio" name="opsi" id="opsi3" value="C"/>
@@ -266,7 +326,8 @@
                                             </select>
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" name="D" placeholder="D">
+                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" id="dinput-text" name="D" placeholder="D">
+                                            <input class="file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full hidden" id="dinput-file" type="file">
                                         </td>
                                         <td class="px-6 py-3">
                                             <input type="radio" name="opsi" id="opsi4" value="D"/>
@@ -284,7 +345,8 @@
                                             </select>
                                         </td>
                                         <td class="px-6 py-3">
-                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" name="E" placeholder="E">
+                                            <input class="border border-gray-400  px-2 py-2 rounded-lg w-full" required type="text" id="einput-text" name="E" placeholder="E">
+                                            <input class="file:bg-blue-400 file:text-white file:font-semibold file:m-1 file:rounded-2xl file:cursor-pointer file:border-blue-400 border cursor-pointer rounded-2xl w-full hidden" id="einput-file" type="file">
                                         </td>
                                         <td class="px-6 py-3">
                                             <input type="radio" name="opsi" id="opsi5" value="E"/>
@@ -334,7 +396,7 @@
                                         Protozoa
                                     </td>
                                     <td class="px-6 py-4">
-                                        <button type="button" id="detail-btn" onclick="redirectEdit(event)" class="w-full rounded-xl mx-2 bg-teal-500 text-white font-semibold py-3 hover:opacity-80 transition duration-300 ease-in-out">Details</button>
+                                        <button type="button" id="detail-btn" class="w-full rounded-xl mx-2 bg-teal-500 text-white font-semibold py-3 hover:opacity-80 transition duration-300 ease-in-out">Details</button>
                                     </td>
                                     <td class="px-6 py-4">
                                         E
